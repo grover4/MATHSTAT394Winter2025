@@ -15,13 +15,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * * * 
 
-<!--- ### Instructions
-
-Please answer the following questions in the order in which they are posed. Add a few empty lines below each and write your answers there. Focus on answering in complete sentences. You will also need scratch paper/pen to work out the answers before typing it.
-
-For help with formatting documents in RMarkdown, please consult [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/). Another option is to search using Google. 
-
---->
 \begin{shaded}
 
 \textbf{Learning Outcomes}
