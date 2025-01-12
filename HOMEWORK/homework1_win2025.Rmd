@@ -1,0 +1,90 @@
+---
+title: "Homework 1"
+subtitle: "Winter 2025"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+\onehalfspacing
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Jan 22 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. \textbf{Be sure to support your work and show your steps.}
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. \textbf{Do not forget to tag your answers to every sub-part of every question. We will take off 10\% for every part that is not tagged}
+
+* * *
+
+
+### Exercises 
+
+1. Jean d'Alembert, an eighteenth century French mathematician, was
+once asked the following question: What is the probability of getting at least one head in two tosses of a fair coin. d'Alembert answered 2/3, his argument being that there are
+3 possible outcomes, H, TH, and TT, two of which (H and TH) satisfy the description
+"at least one head". Discuss his reasoning and why it is erroneous. 
+
+
+2. A new no-frills airline runs a commuter shuttle service using a
+refurbished World War II bomber. The two‐propeller plane will fly if both
+of its engines function. Suppose $A$ defines the event that the port engine fails, and B is the event that the starboard engine fails. 
+
+    We are given that $P(A) = 0.10$, $P(B)=0.15$, and $P(A \cap B)=0.015$. What is the probability that the plane will complete its next flight safely?  (Show your steps and be sure to cite relevant results from our notes to justify them. )
+
+3.  For two events $A$ and $B$ with $P(A)=0.5$ and $P(B)=0.8$, what are the largest and smallest possible values for $P(A \cap B)$? Be sure to show your work and explain the steps, referring to results from our notes.
+
+
+4.  Three events $A$, $B$ and $C$ are defined in a sample space. Show that 
+$$P(A \cup B \cup C) \leq P(A) + P(B) + P(C).$$ 
+   
+a. If we copy and paste this question into ChatGPT, you get the following answer.  Explain what's wrong with the proof.
+
+    We are tasked with showing that for three events \( A \), \( B \), and \( C \) in a sample space, the following inequality holds:
+
+    \[
+    P(A \cup B \cup C) \leq P(A) + P(B) + P(C)
+    \]
+
+    ### Step 1: Apply the Inclusion-Exclusion Principle
+
+    The inclusion-exclusion principle for three events \( A \), \( B \), and \( C \) gives the formula for the probability of their union:
+
+    \[
+    P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(C \cap A) + P(A \cap B \cap C)\]
+
+    ### Step 2: Recognize that the inclusion-exclusion formula is less than or equal to the sum of the individual probabilities
+
+    The right-hand side of the inclusion-exclusion formula includes terms for the pairwise intersections of the events (such as \( P(A \cap B) \)), as well as the three-way intersection \( P(A \cap B \cap C) \). These intersection terms account for the overlap between the events, and they "adjust" for the over-counting of probabilities in the simple sum \( P(A) + P(B) + P(C) \).
+
+    The terms involving the intersections \( P(A \cap B) \), \( P(B \cap C) \), and \( P(C \cap A) \), as well as the three-way intersection \( P(A \cap B \cap C) \), all represent **positive** quantities (since probabilities are non-negative). Therefore, the inclusion-exclusion formula tells us that:
+
+    \[P(A \cup B \cup C) \leq P(A) + P(B) + P(C)\]
+
+    This is because subtracting these intersection terms (which are all non-negative) results in a value that is less than or equal to the sum of the individual probabilities.
+
+    ### Step 3: Conclusion
+
+    Hence, we have shown that:
+
+    \[
+    P(A \cup B \cup C) \leq P(A) + P(B) + P(C)
+    \]
+
+    This completes the proof.
+
+
+b. Now work out the correct proof. Be sure to show your steps and refer to results/theorems from our notes.
+
+    *Hint* Define $E = B \cup C$. 
+    
+c. Suppose we are given that $P(A) = 0.2, P(B) = 0.1$ and $P(C) = 0.3$. What is the smallest possible value for $P\left((A \cup B \cup C)^c \right)$?
+
+    
