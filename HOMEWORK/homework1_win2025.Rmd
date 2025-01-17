@@ -45,40 +45,7 @@ of its engines function. Suppose $A$ defines the event that the port engine fail
 4.  Three events $A$, $B$ and $C$ are defined in a sample space. Show that 
 $$P(A \cup B \cup C) \leq P(A) + P(B) + P(C).$$ 
    
-a. If we copy and paste this question into ChatGPT, you get the following answer.  Explain what's wrong with the proof.
-
-    We are tasked with showing that for three events \( A \), \( B \), and \( C \) in a sample space, the following inequality holds:
-
-    \[
-    P(A \cup B \cup C) \leq P(A) + P(B) + P(C)
-    \]
-
-    ### Step 1: Apply the Inclusion-Exclusion Principle
-
-    The inclusion-exclusion principle for three events \( A \), \( B \), and \( C \) gives the formula for the probability of their union:
-
-    \[
-    P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(C \cap A) + P(A \cap B \cap C)\]
-
-    ### Step 2: Recognize that the inclusion-exclusion formula is less than or equal to the sum of the individual probabilities
-
-    The right-hand side of the inclusion-exclusion formula includes terms for the pairwise intersections of the events (such as \( P(A \cap B) \)), as well as the three-way intersection \( P(A \cap B \cap C) \). These intersection terms account for the overlap between the events, and they "adjust" for the over-counting of probabilities in the simple sum \( P(A) + P(B) + P(C) \).
-
-    The terms involving the intersections \( P(A \cap B) \), \( P(B \cap C) \), and \( P(C \cap A) \), as well as the three-way intersection \( P(A \cap B \cap C) \), all represent **positive** quantities (since probabilities are non-negative). Therefore, the inclusion-exclusion formula tells us that:
-
-    \[P(A \cup B \cup C) \leq P(A) + P(B) + P(C)\]
-
-    This is because subtracting these intersection terms (which are all non-negative) results in a value that is less than or equal to the sum of the individual probabilities.
-
-    ### Step 3: Conclusion
-
-    Hence, we have shown that:
-
-    \[
-    P(A \cup B \cup C) \leq P(A) + P(B) + P(C)
-    \]
-
-    This completes the proof.
+a. If we copy and paste this question into ChatGPT, you get the answer shown in the file `HW1problem4-chatgpt.pdf` in the COURSEMATERIALS/HOMEWORK folder.  Explain what's wrong with the proof.
 
 
 b. Now work out the correct proof. Be sure to show your steps and refer to results/theorems from our notes.
