@@ -69,7 +69,7 @@ d.  In this part, we will examine visually how $P(E)$ varies as a function of $N
 
 e. If all went well, your graph should be unimodal with a peak at $N=100$. Just conceptually, explain why this pattern - probability increasing for $N < 100$ and decreasing thereafter - is reasonable.
 
-    Hint: since the sample is picked randomly, the most likely samples are the ones where the proportion of tagged fish in the sample is close to the proportion of tagged fish in the population.
+    Hint: When $N = 100$, then 25\% of the fish are tagged  
 
 
 3. (Unions) Let A and B be independent events, with $P(A) \geq 0.5$ and $P(B) \geq 0.2$. Show that
