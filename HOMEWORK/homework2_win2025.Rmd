@@ -1,0 +1,85 @@
+---
+title: "Homework 2"
+subtitle: "Winter 2025"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)  #R package
+```
+
+* * * 
+
+
+- This homework is due in Gradescope on Wednesday Jan 29 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. \textbf{Be sure to support your work and show your steps.}
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. \textbf{Do not forget to tag your answers to every sub-part of every question. We will take off 10\% for every part that is not tagged}
+
+
+* * *
+
+### Exercises 
+
+1. (Heads or Tails) Suppose 6 \emph{fair} coins are tossed and the outcome (head or tail) is recorded for each.  
+   
+a. The sample space $S$ corresponding to this "experiment" consists of all possible sequences of heads and tails that result from tossing 6 coins. How many elements are in $S$? Calculate the answer in a code chunk, save it to a variable called `num_S` and then print the value. Also give a brief explanation that connects your reasoning for solving this problem with the calculation for the Braille alphabet in example 3.2. 
+   
+b. Let $E$ denote the event that 4 of the 6 coins land on heads. How many elements are in $E$? Calculate this number in a code chunk, save your answer in a variable called `num_E` and print the value.  Again, in your explanation, be sure to connect the reasoning for solving this problem by describing the calculation for an analogous event in Braille alphabet example.
+   
+c. Give the formula for $P(E)$ and then calculate it in a code chunk and save it to variable called `prob_E` and print the value. Be sure to cite any rules you are using to make your theoretical probability calculation. 
+   
+   
+2. (Tagging goldfish) To estimate the number $N$ of goldfish in a pond, $r = 25$ fish were caught, tagged and released. Later, a second sample of $n = 20$ fish were caught and 5 fish in this sample were noted to be tagged.  
+ 
+a.  How many possible samples of size $n = 20$ can be formed from the $N$ fish in the pond?  Leave your answer in terms of a binomial coefficient since you cannot calculate it because you don't know $N$. Also give a brief explanation that connects your reasoning for solving this problem with the calculation for the sampling of defective microwave ovens from the Chapter 3 quiz.
+    
+b. The event $E$ contains all the samples which have 5 tagged and 15 untagged fish. How many elements are in the event $E$? Leave your answer in terms of $N$. Again, in your explanation, be sure to connect the reasoning for solving this problem by describing the calculation for an analogous event in the sampling of defective microwave ovens scenario from the Chapter 3 quiz.
+   
+c. Assuming each possible sample is equally likely, give an expression for $P(E)$. (Leave your answer in terms of $N$)
+
+d.  In this part, we will examine visually how $P(E)$ varies as a function of $N$.  Fill in the blanks in the R code provided and run it in R to create the plot. **You should remove the `eval = FALSE` chunk option after filling in the blanks.**
+
+
+    ```{r fish, eval=FALSE}
+
+    fishes <- tibble(        #enhanced data frame
+              N = 40:200,    #possible values for N: 40,41, ...,200
+              prob = ___ ) ) #write expression for P(E) in terms of N
+
+    ggplot(data = fishes, 
+           mapping = aes(x = ___,    
+                         y = ___) ) +
+           geom_line() +
+             labs( title = " ___" ,
+                  x = "___", 
+                  y = "___")
+    ```
+
+
+e. If all went well, your graph should be unimodal with a peak at $N=100$. Just conceptually, explain why this pattern - probability increasing for $N < 100$ and decreasing thereafter - is reasonable.
+
+    Hint: since the sample is picked randomly, the most likely samples are the ones where the proportion of tagged fish in the sample is close to the proportion of tagged fish in the population.
+
+
+3. (Unions) Let A and B be independent events, with $P(A) \geq 0.5$ and $P(B) \geq 0.2$. Show that
+$$P(A \cup B) \geq 0.6$$
+
+    If you copy and paste this question into our good friend  ChatGPT, you will get the solution shown in the file `HW2-chatgpt.pdf`. Steps 1 and 2 are well done. However, Step 3 is incorrectly/insufficiently argued, in particular, the argument made at the end for why $P(A \cup B)$ is an increasing function of $a$ and $b$ is inexplicable. How would you rectify the error made here? Go ahead and rewrite just step 3 to finish the proof correctly.
+
+
+4.  (Dependent) Let A, B and C be such that $P(A) = 1/2$, $P(B \cap C) = 2/3$ and $P(A \cap B^c) = 1/4$. Show that A and B are not independent. 
+
+    The solution from ChatGPT is shown in the file `HW2-chatgpt.pdf`. Again, Steps 1 and 2 are well done. However, Step 3 is incorrect. How would you rectify the error made here? Go ahead and rewrite just step 3 to finish the proof correctly.
+
+
