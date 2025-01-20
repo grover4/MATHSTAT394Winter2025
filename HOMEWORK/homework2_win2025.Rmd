@@ -48,12 +48,12 @@ b. The event $E$ contains all the samples which have 5 tagged and 15 untagged fi
    
 c. Assuming each possible sample is equally likely, give an expression for $P(E)$. (Leave your answer in terms of $N$)
 
-d.  In this part, we will examine visually how $P(E)$ varies as a function of $N$.  Fill in the blanks in the R code provided and run it in R to create the plot. **You should remove the `eval = FALSE` chunk option after filling in the blanks.**
+d.  In this part, we will examine visually how $P(E)$ varies as a function of $N$.  Fill in the blanks in the R code provided and run it in R to create the plot. You should remove the `eval = FALSE` chunk option before knitting.   (Note: this part does not require you to know **tidyverse** or **ggplot** functions, and should be doable by all.)
 
 
     ```{r fish, eval=FALSE}
 
-    fishes <- tibble(        #enhanced data frame
+    fishes <- tibble( #enhanced data frame
               N = 40:200,    #possible values for N: 40,41, ...,200
               prob = ___ ) ) #write expression for P(E) in terms of N
 
@@ -67,9 +67,7 @@ d.  In this part, we will examine visually how $P(E)$ varies as a function of $N
     ```
 
 
-e. If all went well, your graph should be unimodal with a peak at $N=100$. Just conceptually, explain why this pattern - probability increasing for $N < 100$ and decreasing thereafter - is reasonable.
-
-    Hint: When $N = 100$, then 25\% of the fish are tagged  
+e. If all went well, your graph should be unimodal with a peak at $N=100$. Just conceptually, explain what this pattern tells us about $P(E)$ and why it makes sense.
 
 
 3. (Unions) Let A and B be independent events, with $P(A) \geq 0.5$ and $P(B) \geq 0.2$. Show that
