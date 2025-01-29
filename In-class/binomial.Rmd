@@ -1,0 +1,26 @@
+---
+title: "Binomial Calculations in R"
+author: "WRITE YOUR NAME HERE"
+graphics: yes
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+#use this code chunk to set global options
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
+1. Free throw Freddy is a 80% shooter which means the probability he makes a shot is 0.8. Suppose he takes 20 shots during a game. 
+
+a. Find the probability that he makes at least 90% of his shots. 
+
+b. Make a probability histogram of $X \sim Binom(20, 0.8)$. How would you describe the shape of this distribution?
+
+c. In class we saw that the probability that he makes at least 90% of his shots when shooting 10 times is `r 1- pbinom(q = 8, size = 10, prob = 0.8)`,  which is larger than the number in part a. How might you explain this?
+
