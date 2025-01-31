@@ -16,11 +16,13 @@ library(tidyverse)
 ```
 
 
-1. Free throw Freddy is a 80% shooter which means the probability he makes a shot is 0.8. Suppose he takes 20 shots during a game. 
+1. Free throw Freddy is a 80% shooter which means the probability that he makes a shot is 0.8. Suppose he takes 18 shots during a game. 
 
-a. Find the probability that he makes at least 90% of his shots. 
+a. How many shots should he expect to make?
 
-b. Make a probability histogram of $X \sim Binom(20, 0.8)$. How would you describe the shape of this distribution?
+b. Find the probability that he makes more shots than expected.
 
-c. In class we saw that the probability that he makes at least 90% of his shots when shooting 10 times is `r 1- pbinom(q = 8, size = 10, prob = 0.8)`,  which is larger than the number in part a. How might you explain this?
+c. Find the probability that he makes between 12 and 15 shots  (inclusive).
+
+
 
