@@ -56,19 +56,9 @@ c. How many questions should they *expect* to guess correctly? Write the formula
   
 d. Give an expression for the probability that they will correctly guess more questions than expected. Then write the R function for calculating this probability and report it using inline code. 
 
- 
 
-3. Weird Wally offers you the following choice. You may have a flat amount of $\frac{1}{3.5}$ dollars or you may roll a fair die and he will give you $\frac{1}{X}$ dollars where $X$ is the value on the roll. 
-The PMF of $X$ is shown in the table below.
+**Added this problem for the TA to work out in section; Students are not expected to do this for section prep**
 
-    \begin{table}[h]
-    \centering
-    \begin{tabular}{c|c|c|c|c|c|c} \hline
-    $x$ & 1& 2 & 3 &4 & 5& 6 \\ \hline
-    $f(x)$& $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ &$\frac{1}{6}$ &$\frac{1}{6}$     &$\frac{1}{6}$ \\ \hline
-    \end{tabular}
-    \end{table}
-
-    Which is the better deal? Calculate $E\left[ \frac{1}{X} \right]$ to decide.  (Hint: use the Law of the Unconscious Probabilist - Lemma 7.2)
+3. The playoff series in the National Hockey league now are all best of seven games, but the early rounds used to be best of three. If a team thinks that on any given day they have probability 0.55 to beat their first round opponent, should they prefer the three game or the seven game format?
 
 
