@@ -62,7 +62,7 @@ a. Write the PMF of $X$ in a tabular format. You may assume independence of outc
     \end{tabular}
     \end{table}
     
-b. Give an expression for $E\left[X \right]$. Show your steps beginning with the definition of an expected value.
+b. Find $E\left[X \right]$. Show your steps beginning with the definition of an expected value.
 
 c. Make a plot of $E\left[X \right]$ versus $\pi$. Does the graph make sense intuitively? Explain briefly. (You can use the `geom_function` layer as we did to graph the variance of a Bernoulli random variable on page 16 from the chapter 7.2 slidedeck)
 
@@ -86,3 +86,11 @@ a. What is the mean $\mu$ and standard deviation $\sigma$ of $X$? Just cite resu
 b. Use Chebyshev's inequality to find the smallest $n$ for
    $$P\left( |X -\frac{n}{2}| < \frac{0.1 \times n}{2} \right)$$
     to be at least 90%. Be sure to show your steps and justify your work.
+
+
+<!---
+4. (Golfers) Two golfers are playing sudden death to decide a tournament. The first one wins a hole with probability $p$, the second one wins with probability $q$, and holes are tied with probability $r$. Holes are independent, and the game stops the first time someone wins a hole. What is the probability that the first player wins? Show your work step by step and cite any rules/results you use.
+
+    *Hint*: Let $X$ be the number of holes it takes for player A to win. Then $X$ can be 1 (win), 2 (tie, win), 3(tie, tie, win), and so on. The probability that player A wins is $P(X=1 \cup X=2 \cup \dots)$
+    
+--->
