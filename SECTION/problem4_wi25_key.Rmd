@@ -1,0 +1,113 @@
+---
+title: "Problem Section 4"
+subtitle:  "Mon February 3"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+    - \usepackage{setspace}
+---
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Identify whether the conditions for a binomial experiment are satisfied.
+     
+   - Calculate binomial probabilities
+   
+   - Calculate expected value
+  
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. Consider the following random variables. Which ones are binomial? Explain your answer.
+
+a. $X$ is the number of "good" rolls when a die is rolled four times. We call a roll "good" if the number rolled is greater than the roll number. So the first roll is good if it is a 2 or higher. The fourth roll is good if it is a 5 or a 6. 
+
+    Lets recall the conditions of a binomial random variable: Fixed # of trials, two outcomes per trial (success and failure), trials are independent, probability of success doesn't change.
+    We have a fixed # of trials, two outcomes, and trials are independent. However, the probability of success DOES change. On the first roll, the probability of success is 5/6. On the second roll, the probability of success is 4/6. Since these are different, $X$ is *not* a binomial random variable.
+
+b. $X$ is the number of tosses for the first head to appear when tossing a coin. You may assume repeated tosses are made in identical fashion 
+    
+    There are not a fixed number or trials in this experiement. We continue flipping until we get a head. This could go on forever... So this is NOT a binomial random variable.
+    
+2. A multiple choice test has 20 questions, each with four answers one of which is correct. Suppose a student randomly guesses the answer to each question. Let the random variable $X$ denote the number of questions they guess correctly. 
+  
+a. What is the distribution of $X$? State the name of the distribution and also the values of its parameters. Be sure to state (in context) any assumptions you need to make.
+
+    The distribution of $X$ is a binomial distribution. Lets check the conditions: we have a fixed number of trials (20), there are two outcomes (we get the questions right, or wrong), the probability of success stays the same (1/4), its safe to assume independence in this experiement. 
+  
+b. Give an expression for the probability that they will correctly guess 12 questions. Then write the R function for calculating this probability and save it to a variable. Report your answer (rounded to four digits) using inline code.
+
+    $$P(X=12) = {20 \choose 12}\cdot \left(\frac{1}{4}\right)^{12}\left(\frac{3}{4}\right)^{8}$$
+    ```{r}
+        we_got_12 <- dbinom(x=12, size=20, prob=1/4)
+    ```
+    The probability of getting 12 questions correct is `r round(we_got_12, 4)`.
+    
+c. How many questions should they *expect* to guess correctly? Write the formula and calculate and report it using inline code **inside the Latex math environment**!
+
+    We expect to get `r 20*(1/4)` correct answers.
+  
+d. Give an expression for the probability that they will correctly guess more questions than expected. Then write the R function for calculating this probability and report it using inline code. 
+
+    We want to calculte the probability 
+    $P(X>5)=1-P(X\leq 5)$$
+    ```{r}
+        we_did_better_than_expected <- 1 - pbinom(q=5, size=20, prob=1/4)
+    
+    ```
+    
+    That probability is `r we_did_better_than_expected`.
+    
+What about the probability that we get between 4 and 10 questions correct?
+    
+We can write this as $P( 4\leq X\leq 10) = P(X=4)+P(X=5)+P(X=6)+P(X=7)+P(X=8)+P(X=9)+P(X=10) = P(X\leq 10) - P(X<3)$.
+
+    ```{r}
+      
+        pbinom(q=10, size=20, prob=1/4) - pbinom(q=3,size=20, prob=1/4) 
+        sum(dbinom(4:10, size=20, prob=1/4))
+    
+    ```
+
+What about $P(4<X<10)=P(X=5)+P(X=6)+P(X=7)+P(X=8)+P(X=9) = P(X\leq 10) - P(X<3)$?
+
+    ```{r}
+       pbinom(q=9, size=20, prob=1/4) - pbinom(q=4,size=20, prob=1/4) 
+       sum(dbinom(5:9, size=20, prob=1/4))
+    ```
+
+
+
+**Added this problem for the TA to work out in section; Students are not expected to do this for section prep**
+
+3. The playoff series in the National Hockey league now are all best of seven games, but the early rounds used to be best of three. If a team thinks that on any given day they have probability 0.55 to beat their first round opponent, should they prefer the three game or the seven game format?
+
+
+```{r}
+  
+  (0.55)^4 + (dbinom(x=3, size=4, prob=0.55) + dbinom(x=3, size=5, prob=0.55)+dbinom(x=3, size=6, prob=0.55))*0.55
+
+```
+
