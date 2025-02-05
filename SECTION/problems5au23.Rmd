@@ -91,9 +91,3 @@ b. Put your calculation from part a to the test by generating 1,000 values from 
 
 c. Define a new random variable $Y$ as the number of times we have to generate a binomial variable before we find an acceptable one. For example, if on our first try, we get an acceptable $x$, then $y=0$. Write the PMF of $Y$.  
 
-<!---
-c. How many $x$'s should you expect to reject? That is, find $E\left[Y \right]$.
-
-    Hint: For any real number $r < 1$, we have the result 
-    $$1 + r + r^2 + r^3 + \dots = \frac{1}{1-r}$$ 
---->
