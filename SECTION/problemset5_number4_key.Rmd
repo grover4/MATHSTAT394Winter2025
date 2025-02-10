@@ -1,0 +1,52 @@
+---
+title: "Problemset5_number4"
+output: html_document
+date: "2025-02-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+
+acceptance <- pbinom(q=3, size=10, prob=2/3) # P(X\leq 3)
+
+```
+
+The probability of acceptance is `r round(acceptance, 5)`.
+
+```{r}
+set.seed (131) 
+
+reps <- 1000
+
+x <- rbinom(n = reps, size = 10, prob = 2/3)
+
+sum(x <= 3)/reps
+```
+
+
+This is not a solution to the exercise, is is extra code that you are not responsible to understand. But it provides the visualization of the Law of Large Numbers I was describing in class.
+
+```{r}
+set.seed(131)
+
+reps <- seq(100, 1e7, 1e6)
+ratios <- c()
+
+for (i in 1:length(reps)) { x <- rbinom(n=reps[i], size=10, prob=2/3)
+                            ratios[i] <-  sum(x<=3)/reps[i] }  # generate reps of our binomial rv
+
+ggplot(mapping = aes(reps, ratios)) +
+  geom_point() + 
+  geom_hline(yintercept=acceptance, color='red')
+```
+
+
+```{r}
+
+
+
+```
