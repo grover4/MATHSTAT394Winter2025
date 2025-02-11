@@ -1,0 +1,100 @@
+---
+title: "Problem Section 6"
+subtitle:  "Mon Feb 17, 2025"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)  #for count function in problem 4
+library(fastR2)     #for fumbles data
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Use the geometric series to calculate probabilities
+   
+   - Use the Poisson model to calculate probabilities
+   
+   - Use the `uniroot` function to solve a non-linear equation
+   
+   - Fit a Poisson model to data
+  
+   - Back up and support work with relevant explanations
+
+ 
+ 
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. (Geometric series) Andrea has found that she wins about 28% of the time when playing a solitaire game  on her computer. 
+
+a. Calculate the probability that she plays 10 games before her first win.
+
+b. Calculate the probability that she has to play at least 10 games before her first win.
+
+c. What is the expected number of games she has to play before her first win? Find the probability that she loses more games than expected.
+
+
+2.  (Poisson process) Suppose telephone calls arrive at a help line at the rate of two per minute. A Poisson process is assumed to provide a good model for the arrivals. In other words, if we let $X(t)$ denote the number of arrivals in an interval of length $t$ minutes, then $X(t) \sim Poisson(\lambda = 2t)$ and the PMF of $X(t)$ is give by
+   \begin{align*}
+   f(x) &= P(X(t) = x) = \frac{ e^{-2t} \:(2t)^x}{x!}  \ \ x = 0,1,2, \dots
+   \end{align*}
+
+    For each question below, write the probability you wish to calculate, then use R to do the calculation.
+
+a. Calculate the probability that exactly five calls will arrive in the next 2 minutes.
+
+b. Calculate the probability that the next two calls will arrive more than 5 minutes apart.
+
+
+
+3. (Poisson) Suppose $X$, the number of chocolate chips in a certain type of cookie has a Poisson distribution with rate $\lambda$. We want the probability that a randomly chosen cookie has at least 2 chocolate chips to be greater than or equal to 0.99. Find the smallest value of $\lambda$ that ensures this probability.
+
+   *Note* The equation will be non-linear in $\lambda$ and can only be solved numerically. For your part, just set up the equation which needs to be solved. You will learn how to use `uniroot` to find the $\lambda$ in section. 
+   
+   
+4. Is the Poisson distribution a good fit for modeling the number of fumbles in NCAA football? The package **fastR2** contains a dataset called `Fumbles` which gives the number of fumbles by each NCAA FBS team for the first three weeks in November 2010. 
+
+    The frequency distribution of the number of fumbles made in week 1 is shown below.
+    
+    ```{r message = F, warning = F}
+    Fumbles %>% count(week1)
+    
+    ```
+    
+a. Using R as a calculator, write code in the code chunk below to find $\bar{x}$ the mean number of fumbles made in week 1.
+
+    ```{r 4a}
+
+    ```
+
+
+b. Suppose we model these data using a Poisson distribution with rate $\lambda$ set equal to $\bar{x}$. What does this Poisson model predict for the probabilities of seeing 0 fumbles? How does this match with the fraction of times we actually observed "0" fumbles in week 1? Repeat for the remaining values.
+
+    Again, use R as a calculator and write your code to do the calculations in the code chunk below. You may use the function `dois` for finding the probabilities which are predicted by the Poisson model.
+    
+    ```{r 4b}
+ 
+    
+    ```
+    
+
+
