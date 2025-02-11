@@ -44,9 +44,3 @@ ggplot(mapping = aes(reps, ratios)) +
   geom_hline(yintercept=acceptance, color='red')
 ```
 
-
-```{r}
-
-
-
-```
