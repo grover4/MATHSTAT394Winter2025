@@ -11,7 +11,7 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)  #for count function in problem 4
+library(tidyverse)  #for count in problem 4
 library(fastR2)     #for fumbles data
 
 ```
@@ -87,14 +87,15 @@ a. Using R as a calculator, write code in the code chunk below to find $\bar{x}$
     ```
 
 
-b. Suppose we model these data using a Poisson distribution with rate $\lambda$ set equal to $\bar{x}$. What does this Poisson model predict for the probabilities of seeing 0 fumbles? How does this match with the fraction of times we actually observed "0" fumbles in week 1? Repeat for the remaining values.
+b. Suppose we model these data using a Poisson distribution with rate $\lambda$ set equal to $\bar{x}$. What does this Poisson model predict for the probabilities of seeing 0 fumbles? How does this match with the fraction of times we actually observed "0" fumbles in week 1? Enter these numbers in the small html table created below. Repeat for the remaining values.
 
-    Again, use R as a calculator and write your code to do the calculations in the code chunk below. You may use the function `dois` for finding the probabilities which are predicted by the Poisson model.
-    
-    ```{r 4b}
- 
-    
-    ```
-    
-
-
+    |x      | observed prop | predicted prob
+    |:----- |:-----------   | :----------   
+    |    0  |               |               
+    |    1  |               |               
+    |    2  |               |               
+    |    3  |               |               
+    |    4  |               |               
+    |    5  |               |               
+    |    6  |               |
+    |    7  |               |
