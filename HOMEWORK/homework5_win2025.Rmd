@@ -1,0 +1,139 @@
+---
+title: "Homework 5"
+subtitle: "Winter 2025"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday February 26 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+
+1. (Blood type) In the US population, 85% have an agglutinating factor in their blood classifying them as Rh positive, while 15% lack the factor and are Rh negative. A medical researcher wants to analyze blood from a newborn Rh negative infant, so she examines the blood types of successive newborn infants until she finds an Rh negative infant. 
+
+
+a. Let the random variable $X$ denote the number of Rh positive infants she needs to type before she finds the first negative case. Write the distribution of $X$. Be sure to state the values of any parameters. List the assumptions you need to make to answer this question.
+
+b. How many Rh positive infants should she expect to type before she finds her first Rh negative? State the formula you are using, then calculate and print it in a code chunk  and then report your answer in a complete sentence in context.
+
+c. What is the probability that she will type more Rh positive infants than expected? Give the expression for this probability here, do not calculate it yet. 
+
+d. Calculate the probability from part c using your expression and also a built in R function for working with the distribution from part a. Be sure to echo your code chunk and report your answers.  
+   
+2. (Memoryless) Let $X$ be a geometric random variable with probability $\pi$. That is,
+$$f(x) = \pi \cdot (1 - \pi)^{x}, \ \ x = 0, 1, 2 \dots$$ 
+
+a. Show that for all non-negative integers  $x$ and $k$,
+$$P(X \geq k + x | X \geq k) = P(X \geq x).$$ Be sure to show your steps.
+
+b. Because of the result in part a, we say that the geometric distribution is a \emph{memoryless} distribution. Explain how this is an appropriate name for this property.
+
+3. (Insecticide) A large number of insects are expected to be attracted to a variety of rose plant. A commercial insecticide is advertised as being 99% effective. Suppose 2,000 insects infest a rose garden where the insecticide has been applied and let $X$ denote the number of surviving insects.
+  
+a. What probability distribution might provide the most accurate model for this experiment? Be sure to give the reasons for why.
+
+
+b. Calculate the probability that fewer than 10 insects survive, using the model from  part a. Be sure to show your code and output.
+
+    ```{r 3b}
+    
+    
+    ```
+
+c. What other probability distribution might be more computationally convenient and would provide a good approximation? Be sure to state the name and values of any parameters.
+
+d. Calculate  an approximation to the probability from part b using the model from part 
+c. Be sure to show your code and output.
+
+    ```{r 3d}
+    
+    
+    ```
+  
+
+
+4. (Apple trees) From each of 6 trees in an apple orchard, 25 leaves are selected. On each of the leaves, the number of adult mites are counted. 
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{c|ccccccccc} \hline
+    $x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8+ \\
+    count & 70 & 38 & 17 & 10 & 9 & 3 & 2 & 1 & 0 \\ \hline
+    \end{tabular}
+    \end{table}
+
+a. Using R as a calculator, write code to find $\bar{x}$, the mean number of adult mites found. Be sure to show your code and the output!
+
+    ```{r 4a}
+
+
+    ```
+
+b. Let $X$ denote the number of mites on a randomly selected leaf. In this question, you will consider two possible models for $X$:
+
+ - $X \sim Pois(lambda = \bar{x})$ 
+    
+ - $X \sim Geom( prob = \frac{1}{1 + \bar{x}} )$
+ 
+    where $\bar{x}$ is the number you calculated from part a. for the mean. 
+  
+    Write code in the code chunk below to make side-by-side plots of the probability histograms for each distribution. Be sure to show the code and the output, don't forget labels!
+
+    *Hint*: For help with the code for side-by-side plots, look from slide 11 in the slidedeck Chapter 8.1. You will obviously need to modify this code for this example. 
+
+    ```{r 4b}
+    #add patchwork package in setup code chunk, NOT HERE!
+
+
+    ```
+    
+    
+c. Fill in the blanks in the code chunk below and then remove the `eval = FALSE` option. 
+
+
+    ```{r 4c, eval = FALSE}
+    
+    obs_vs_pred <- tibble(
+         x = 0:7,
+         obs_prop =  ___ ,
+         pred_pois = ___ ,
+         pred_geom = ___
+         
+    )
+    
+    obs_vs_pred
+    
+    
+    ```
+    
+
+d. Which model - the Poisson or Geometric -- seems to fit this data better? 
