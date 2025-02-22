@@ -71,8 +71,7 @@ b. Calculate the probability that fewer than 10 insects survive, using the model
 
 c. What other probability distribution might be more computationally convenient and would provide a good approximation? Be sure to state the name and values of any parameters.
 
-d. Calculate  an approximation to the probability from part b using the model from part 
-c. Be sure to show your code and output.
+d. Calculate  an approximation to the probability from part b using the model from part c; Be sure to show your code and output.
 
     ```{r 3d}
     
