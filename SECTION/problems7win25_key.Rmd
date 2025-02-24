@@ -113,11 +113,12 @@ so that the sum of the areas of the blocks equals 1. (The $n$ represents the tot
 
     What is the area of a block if the $y$ value is the density for that block? Why do the areas of the blocks add to 1 in a density histogram?
     
-    The are of a block if we are plotting a density function is
+    The are of a block in a density histogram is the proportion of values which fall in the bin. Namely: 
+    
     $$area = density \times width = \frac{frquency}{n}$$.
     
-    The area of the blocks in a density histogram  add to 1 because we are adding 
-    up the proportion of observations which fall in each bin ($\frac{frequency}{n}$.
+    The area of the blocks in a density histogram  sum to 1 because we are adding 
+    up the proportion of observations which fall in each bin.  
 
 
 c. Fill in the blanks in the following code to create a density histogram of `xval` and then superimpose the PDF of a $Unif(20,70)$ on it. Remove the `eval = F` chunk option after filling in the blanks.
