@@ -1,0 +1,142 @@
+---
+title: "Problem Section 7"
+subtitle:  "Mon Feb 24, 2025"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Calculate density in a density histogram
+   
+   - Find probabilities using a PDF.
+   
+   - Derive the PDF from a CDF
+   
+   - Calculate probabilities in the uniform distribution
+  
+   - Back up and support work with relevant explanations
+
+ 
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+
+1. Semester grades (expressed as a fraction of points) in a Physics for Poets class are decribed fairly well by the PDF
+$$f(x) =  6x \cdot (1-x), \qquad 0 \leq x < 1.$$
+Anyone earning less than 60% fails. Five housemates are among the students enrolled in the class. Suppose the random variable $X$ denotes the number (out of the 5 housemates) who fail the class.
+
+a. What is the distribution of $X$? State the name as well as the values for the parameters. (What assumption are you making? Do you think it is valid here?)
+b. The number of housemates who fail will be `___` give or take `___`. Fill in the first blank with $E\left[X \right]$ and the second blank with the $SD\left[X \right]$.
+
+2. Suppose $X$ is a random variable with CDF
+\begin{align*}
+F(x) &= \left\{ \begin{array}{cc}
+                      0 & x < 0 \\
+                      1 - e^{-x^{3/2}} & x \geq 0
+                  \end{array}
+                  \right.
+\end{align*}
+
+    Determine $f(x)$, the PDF of $X$.
+
+
+3. Suppose $X$ is uniformly distributed over $[0,1)$. That is
+$$f(x) = 1 \ \ \ 0 \leq x < 1.$$ 
+    Show that $$P(-\ln(X) \leq 5) = 1 - e^{-5}$$ 
+   where $\ln(X)$ denotes denotes the natural logarithm of $X$.
+   
+   \begin{align*}
+      P(X \geq e^{-5}) &= 1-P(X<e^{-5})\\
+      &=1-\int_0^{e^{-5}}dx\\
+      &=1- x \Big\rvert_0^{e^{-5}}\\
+      &=1-e^{-5}
+   \end{align*}
+   
+   
+   
+4. Suppose we have reason to believe that these
+forty xi ’s may be a random sample from a uniform probability function defined over the interval $[20, 70)$ - that is,
+$$f(x) = \frac{1}{50} \ \ \ 20 \leq x < 70.$$
+
+    ```{r unif-data, echo = TRUE, message =TRUE, warning = TRUE, collapse = TRUE}
+
+    sample_data <- tibble( 
+          xval  = c( 33.8, 62.6, 42.3, 62.9, 32.9, 58.9, 60.8, 49.1, 
+                     42.6, 59.8, 41.6, 54.5, 40.5, 30.3, 22.4, 25.0, 
+                     59.2, 67.5, 64.1, 59.3, 24.9, 22.3, 69.7, 41.2, 
+                     64.5, 33.4, 39.0, 53.1, 21.6, 46.0, 28.1, 68.7, 
+                     27.6, 57.6, 54.8, 48.9, 68.4, 38.4, 69.0, 46.6 ) )
+    ```
+
+    In the following exercise, we will learn to make a histogram of these data and then superimpose the uniform PDF on the histogram to assess the fit. 
+    
+a. To begin, fill in the blanks in the code below to create a frequency histogram of the data. Once the blanks are filled, remove the `eval = F` chunk option to see the graph.
+
+    ```{r freq-hist, echo = T, message = F, warning = F}
+
+    ggplot() +
+       geom_histogram(data = sample_data,
+                 mapping =aes(x = xval ),
+                 breaks = seq(20, 70, 10),
+                 alpha = 0.5,
+                 color = "purple",
+                 fill = "gold") +
+       labs(x = "xval",
+            title = "Frequency Histogram") 
+
+    ```
+
+b. Before we can add the PDF of the uniform density to the graph, the y axis of the histogram must be re-scaled from a count (or frequency) to a density 
+$$density = \frac{frequency}{n \times width}$$
+so that the sum of the areas of the blocks equals 1. (The $n$ represents the total number of observations in the dataset.)
+
+    What is the area of a block if the $y$ value is the density for that block? Why do the areas of the blocks add to 1 in a density histogram?
+    
+    The are of a block if we are plotting a density function is
+    $$area=density \times width = \frac{frquency}{n}$$.
+    
+    The sum of the densities is
+    $$\frac{density of bin 1+density of bin 2+\ldots+ density of bin n}{n}$$
+
+
+c. Fill in the blanks in the following code to create a density histogram of `xval` and then superimpose the PDF of a $Unif(20,70)$ on it. Remove the `eval = F` chunk option after filling in the blanks.
+
+    ```{r density-hist, echo = T, message = F, warning = F}
+
+    ggplot() +
+       geom_histogram(data = sample_data,
+                 mapping =aes(x = xval, 
+                              y = after_stat(density)),
+                 breaks = seq(20, 70, 10),
+                 alpha = 0.5,
+                 color = "purple",
+                 fill = "gold") +
+      geom_function( fun = dunif, args = list( min = 20, max = 70) ) +
+       labs(x = "xval",
+            title = "Density Histogram with Uniform pdf") 
+
+    ```
+
+
+
