@@ -38,7 +38,7 @@ The specific tasks include:
 ### Exercises 
 
 
-1. Among the most famous of all meteor showers are the Perseids, which occur each year in early August. In some areas the frequency of visible Perseids can be as high as forty per hour. Given that such sightings occur according to a Poisson process, the random variable $Y$ which denotes the time (in hours) between consecutive sightings satisfies $Y \sim Exp(\lambda = 40)$.
+1. Among the most famous of all meteor showers are the Perseids, which occur each year in early August. In some areas the frequency of visible Perseids can be as high as forty per hour. Assume that sightings occur according to a Poisson process.
 
 a. Let $X(t)$ denote the number of sightings in t hours. Then we are given $X(t) \sim Pois(40t)$.  Calculate the probability using the Poisson model that an observer who has just seen a meteor will have to wait at least five minutes before seeing another one.
 
@@ -75,6 +75,7 @@ b. State the name of the distribution of $Y$
     Find 
 
 a. $E\left(\frac{1}{X} \right)$
+
     
 
 b. $E\left[-\ln(X) \right]$
