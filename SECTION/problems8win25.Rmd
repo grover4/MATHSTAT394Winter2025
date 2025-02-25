@@ -1,0 +1,85 @@
+---
+title: "Problem Section 8"
+subtitle:  "Mon March 3"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Calculate probabilities for the exponential distribution
+   
+   - Apply the law of the unconscious probabilist for a continuous random variable
+  
+   - Back up and support work with relevant explanations
+
+ 
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+
+1. Among the most famous of all meteor showers are the Perseids, which occur each year in early August. In some areas the frequency of visible Perseids can be as high as forty per hour. Given that such sightings occur according to a Poisson process, the random variable $Y$ which denotes the time (in hours) between consecutive sightings satisfies $Y \sim Exp(\lambda = 40)$.
+
+a. Let $X(t)$ denote the number of sightings in t hours. Then we are given $X(t) \sim Pois(40t)$.  Calculate the probability using the Poisson model that an observer who has just seen a meteor will have to wait at least five minutes before seeing another one.
+
+
+b. Let the random variable $Y$ denote the length of time (in hours) between consecutive sightings of the meteor. 
+
+    i. What is the distribution of $Y$? State the name and also show its PDF.
+
+    ii. Repeat the calculation from part a but using the distribution of $Y$.
+
+
+2. The time $X$ (in seconds) between two randomly selected consecutive
+cars in a traffic flow model is modeled with PDF
+$$f(x) = \frac{k}{x^4} , a \leq x < \infty$$
+where $a > 0$.
+
+a. Determine the value of $k$ in terms of $a$.
+
+b. Find $E\left[X \right]$ in terms of $a$
+
+c. Find $SD\left[X \right]$, the standard deviation of $X$ in terms of $a$.
+
+d. Find the median of the distribution in terms of $a$. That is, find the number $q$ so that $P(X \leq q) = 0.5$.
+    
+3. Suppose $X \sim Unif(0,1)$. 
+
+a. Use the CDF method to find the PDF for $Y = X -a$, where $a$ is some positive number. This means find the CDF of $Y$ and then differentiate it to find the PDF of $Y$.
+
+b. State the name of the distribution of $Y$
+
+4. Suppose $X$ is uniformly distributed on $[a, a+1)$ for some $a > 0$, that is, the PDF of $X$ is:
+    $$f(x) = 1  \ \ \ \ \ a \leq x < a+1$$
+   
+    Find 
+
+a. $E\left(\frac{1}{X} \right)$
+    
+
+b. $E\left[-\ln(X) \right]$
+
+
+             
+
+ 
