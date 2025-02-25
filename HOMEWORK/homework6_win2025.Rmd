@@ -1,0 +1,104 @@
+---
+title: "Homework 6"
+subtitle: "Winter 2025"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday March 5 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+
+1. (Flooding river) A river floods every year. Suppose that the low-water mark is set at 1 and the high-water mark $X$ has CDF
+\begin{align*}
+	F_X(x) &= P(X \leq x) \\
+	       &= \left\{ \begin{array}{cc} 
+		               0 & x < 1 \\
+		               1 - 1/x^2 & 1 \leq x < \infty. \end{array} \right.
+\end{align*}
+
+a.  Find a PDF, $f(x)$ for $X$.
+
+b. If the low-water mark is set to 0 and we use a unit of measurement that is $\frac{1}{10}$ of that given previously, the high-water mark becomes $Y=10\:(X-1).$ Find $P(Y \leq 1)$. 
+   
+    
+
+2. (Phone calls) Suppose the duration of a phone call (in minutes), $X$, can be described probabilistically by the equation
+
+	 $$P(X > x) = \frac{1}{2} e^{-x} + \frac{1}{2} e^{- \frac{x}{5}}, \ 0 \leq x < \infty$$
+	   
+   	
+a. Write the CDF of $X$ by filling in the question marks in align environment below. (No explanation needed)
+
+   \begin{align*}
+   F(x) &= P(X \leq x) \\
+   &= \left\{ \begin{array}{cc} 
+                   ??? & x < 0\\
+                   ??? & x \geq 0.
+              \end{array} \right.
+    \end{align*}
+    
+b. Find a PDF, $f(x)$  for $x$. Show your work mathematically. 
+
+c. Find the probability that the call will last between 3 and 5 minutes. In other words, find $P(3 \leq X < 5)$. Show what you will be calculating first and then do the calculation in a code chunk and print the answer.
+
+    *Hint:* You can just plug into the CDF and avoid integrations.
+   
+d. Find the median length of a phone call (in mins). Show what you are calculating mathematically first. Calculations should then be done in a code chunk and the answer reported.
+
+    Hint: Please see  problem 3 from the week 6 Quiz section recording (Problem set 6). You want to find $q$ so that $P(X \leq q) = F(q) = 0.5$. You will need to use `uniroot` to solve this equation since it is non-linear in $q$. See 
+
+3. Suppose $Y \sim Unif(-3,3)$. 
+
+a. Write the PDF of $Y$. (Don't forget the range)
+
+b. Find the probability that the roots of the quadratic equation in $x$
+$$x^2 + x \cdot Y + (Y + 1)$$ are real. 
+
+    Hint: The roots of the equation $ax^2 + b x + c=0$ are real if the discriminant $b^2-4ac \geq 0$.
+
+4. The following ordered set of 27 Probability-values (from Kaati et al., Eur. J. Hum Genetics 2007) were the result of testing a hypothesis using many independent subgroups of a sample. If the hypothesis being tested is true, then the P-values all come from a uniform distribution on $[0,1)$.
+
+    ```{r pvalues}
+    pvalue_df <- tibble( 
+      pval = c(0.01, 0.01, 0.02, 0.04, 0.04, 0.05, 0.07, 0.07, 
+               0.10, 0.19, 0.24, 0.27, 0.34, 0.37, 0.44, 0.50, 
+               0.53, 0.54, 0.55, 0.61, 0.70, 0.77, 0.80, 0.80, 
+               0.82, 0.94, 0.99)
+      )
+    ```
+
+      Using `ggplot`, make a histogram of the P-values. The superimpose the PDF of a $Unif(0,1)$ on it. What do you conclude about the hypothesis being tested?
+
+     Hint: Please see problem 4 from the week 7 Quiz Section recording (Problem set 7) for sample code. Also when using the `breaks` argument, set the witdth of the bins to 1/6 for uniformity of grading.
+
+
