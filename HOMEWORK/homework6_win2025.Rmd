@@ -77,7 +77,7 @@ d. Find the median length of a phone call (in mins). Show what you are calculati
 
     Hint: Please see  problem 3 from the week 6 Quiz section recording (Problem set 6). You want to find $q$ so that $P(X \leq q) = F(q) = 0.5$. You will need to use `uniroot` to solve this equation since it is non-linear in $q$. See 
 
-3. Suppose $Y \sim Unif(-3,3)$. 
+3. (Quadratic roots) Suppose $Y \sim Unif(-3,3)$. 
 
 a. Write the PDF of $Y$. (Don't forget the range)
 
@@ -86,7 +86,7 @@ $$x^2 + x \cdot Y + (Y + 1)$$ are real.
 
     Hint: The roots of the equation $ax^2 + b x + c=0$ are real if the discriminant $b^2-4ac \geq 0$.
 
-4. The following ordered set of 27 Probability-values (from Kaati et al., Eur. J. Hum Genetics 2007) were the result of testing a hypothesis using many independent subgroups of a sample. If the hypothesis being tested is true, then the P-values all come from a uniform distribution on $[0,1)$.
+4. (P-values) The following ordered set of 27 Probability-values (from Kaati et al., Eur. J. Hum Genetics 2007) were the result of testing a hypothesis using many independent subgroups of a sample. If the hypothesis being tested is true, then the P-values all come from a uniform distribution on $[0,1)$.
 
     ```{r pvalues}
     pvalue_df <- tibble( 
