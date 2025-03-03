@@ -1,0 +1,68 @@
+---
+title: "Homework 7"
+subtitle: "Winter 2025"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday March 12 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. \textbf{This is your last homework and no late days may be used for this homework.}
+
+- Please answer the following questions in the order in which they are posed. 
+
+- \textbf{In the interest of saving you some time, you may handwrite your answers (and R code/output) and upload it in Gradescope. Don't forget to tag pages. Please be extra careful to write neatly and upload a clear image that is easy to view and read. If we cannot read your work, we will be unable to grade your homework.}
+
+* * *
+
+
+### Exercises 
+
+
+1. (Burnout) In a large factory building, where the fluorescent lights are kept on day and night, the lights burn out according to a Poisson process at a daily rate of $\lambda = 6$. (Assume that lights are replaced as soon as they burn out for simplicity. Also a day refers to a 24 hour period.)
+
+a. Let $X(t)$ denote the number of burnouts in an interval of $t$ days. What is the distribution of $X(t)$? Write its PMF. (Don't forget the range!)
+
+b. Find the probability that there are more than two burnouts between noon and 1 PM tomorrow. (Be sure to define your random variable, state what probability you are calculating and then do your calculation using R in a code chunk manually and also using `ppois`.)
+
+c. On a certain day, you count the number of burnouts during a 12 hour period between 8 AM and 8 PM. 
+
+    i. How many burnouts should you expect? With what standard deviation? (Please give your answers in a complete sentence, don't just write two numbers)
+
+    ii. What does Chebychev's inequality say about the probability there will be between 1 and 5 burnouts (not inclusive) during this period?  Be sure to show your work/code/answer.
+
+        Hint: we want $P(1 < X(1/2) < 5)$. Subtract the mean 3 and rewrite it in the form of Chebychev.
+
+    iii. Use R to calculate the probability from part (ii) with the exact distribution of the number of burnouts for this time period. 
+
+d. Find the probability that the next two burnouts will be more than 3 hours apart. Do the calculation using the Poisson and also the exponential waiting time distribution. Be sure to clearly state random variables and their distributions, what you are calculating and then you may do the actual calculation in R. Be sure to show code and output. 
+
+  
+
+2. (Tool-and-die) A tool-and-die company makes castings for steel stress-monitoring gauges. Their annual profit $Q$ is a function of demand $X$, given by $$t(X) = 1 - e^{-2 X}.$$
+Suppose the demand $X$ has the PDF $$f(x) = 6 e^{-6x} \ \ \   x \geq 0.$$ Find $E\left[ t(X) \right]$. State any rules you use and show your work clearly. 
+
+3. (Ball bearings) The diameters (in mm) of ball bearings from a particular company are normally distributed. In order to quickly determine the parameters of the normal distribution, one determines the proportion of ball bearings going through sieves with circular holes of different sizes. If 23% of the bearings go through a hole of diameter 4.9 mm and 59% go through a hole of diameter 5.0 mm, what are the mean and standard deviation of the normal distribution? Assume the ball bearings are spherical. 
+
+    *Hint:* Let $X$ denote the diameter of a randomly selected ball bearing. Then $X \sim Norm(\mu, \sigma)$. You are given
+\begin{align*}
+P(X \leq 4.9) &= 0.23,\\
+P(X \leq 5.0) &= 0.59.
+\end{align*}
